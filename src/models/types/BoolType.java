@@ -7,6 +7,11 @@ public class BoolType implements Type{
     }
 
     @Override
+    public Type deepCopy() {
+        return new BoolType();
+    }
+
+    @Override
     public String toString() {
         return "bool";
     }

@@ -21,6 +21,11 @@ public class BoolValue implements Value {
     }
 
     @Override
+    public BoolValue deepCopy() {
+        return new BoolValue(val);
+    }
+
+    @Override
     public Type getType() {
         return new BoolType();
     }
