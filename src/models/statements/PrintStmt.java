@@ -23,6 +23,11 @@ public class PrintStmt implements IStmt{
     }
 
     @Override
+    public IStmt deepCopy() {
+        return new PrintStmt(this.exp.deepCopy());
+    }
+
+    @Override
     public String toString() {
         return "Print(" + exp + ")";
     }

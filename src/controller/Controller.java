@@ -10,8 +10,14 @@ import repository.IRepository;
 public class Controller implements IController{
     private final IRepository repo;
 
+    private boolean displayFlag = false;
+
     public Controller(IRepository repo) {
         this.repo = repo;
+    }
+
+    public void setDisplayFlag(boolean displayFlag) {
+        this.displayFlag = displayFlag;
     }
 
     @Override
@@ -29,7 +35,9 @@ public class Controller implements IController{
         PrgState prg = repo.getCurrentProgram();
         while(!prg.getExeStack().isEmpty()){
             oneStep(prg);
-            System.out.println(prg);
+            if(displayFlag) {
+                System.out.println(prg);
+            }
         }
     }
 

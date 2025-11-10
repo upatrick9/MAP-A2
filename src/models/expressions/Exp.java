@@ -6,4 +6,6 @@ import models.values.Value;
 
 public interface Exp {
     Value eval(MyIDictionary<String, Value> tbl) throws MyException;
+
+    Exp deepCopy();
 }

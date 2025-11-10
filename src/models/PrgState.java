@@ -14,7 +14,7 @@ public class PrgState {
         this.exeStack = stk;
         this.symTable = symTable;
         this.out = out;
-        this.originalProgram = originalProgram;
+        this.originalProgram = originalProgram.deepCopy();
         exeStack.push(originalProgram);
     }
 

@@ -79,6 +79,23 @@ public class View {
         IRepository repo = new Repository(prg);
         Controller ctrl = new Controller(repo);
 
+        System.out.println("Display flag on or off?");
+        System.out.println("1. On");
+        System.out.println("2. Off");
+        System.out.println("Choose an option: ");
+
+        Scanner scanner = new Scanner(System.in);
+        int option = scanner.nextInt();
+
+        switch (option){
+            case 1 -> ctrl.setDisplayFlag(true);
+            case 2 -> ctrl.setDisplayFlag(false);
+            default -> {
+                System.out.println("Invalid option");
+                ctrl.setDisplayFlag(false);
+            }
+        }
+
         try{
             ctrl.allStep();
             System.out.println("Program finished successfully");

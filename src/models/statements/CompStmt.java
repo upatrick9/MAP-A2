@@ -23,6 +23,11 @@ public class CompStmt implements IStmt{
     }
 
     @Override
+    public IStmt deepCopy() {
+        return new CompStmt(first.deepCopy(), snd.deepCopy());
+    }
+
+    @Override
     public String toString() {
         return "(" + first + ";" + snd + ")";
     }

@@ -17,6 +17,11 @@ public class ValueExp implements Exp{
     }
 
     @Override
+    public Exp deepCopy() {
+        return new ValueExp(e);
+    }
+
+    @Override
     public String toString() {
         return e.toString();
     }

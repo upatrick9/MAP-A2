@@ -33,6 +33,11 @@ public class VarDeclStmt implements IStmt {
     }
 
     @Override
+    public IStmt deepCopy() {
+        return new VarDeclStmt(this.name, this.type);
+    }
+
+    @Override
     public String toString() {
         return type + " " + name;
     }

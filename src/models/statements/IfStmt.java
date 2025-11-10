@@ -37,6 +37,11 @@ public class IfStmt implements IStmt{
     }
 
     @Override
+    public IStmt deepCopy() {
+        return new IfStmt(this.exp.deepCopy(), this.thenS, this.elseS);
+    }
+
+    @Override
     public String toString() {
         return "If(" + exp.toString() + ") THEN(" + thenS + ") ELSE(" + elseS + ")";
     }
